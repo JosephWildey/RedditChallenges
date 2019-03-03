@@ -15,8 +15,13 @@ public class BalancedBonus {
         usrString = strInput.nextLine();
         strInput.close();
 
+        /*Even though we're comparing only 26 characters, the string
+        may be larger than the alphabet. Therefore the array should be
+        able to be larger than the alphabet too.*/
+        len = usrString.length();
+
         int[] numArr = new int[26];
-        char[] letArr = new char[26];
+        char[] letArr = new char[len];
 
         /*Fun part: loop through the string and count the each character.
         Then increment the index dedicated to the count of that character.
