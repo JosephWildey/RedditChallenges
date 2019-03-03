@@ -43,17 +43,16 @@ public class AdditivePersistence {
             /*Output the value.*/
             System.out.println(numStr);
 
-            /*Just in case the number is greater than one digit in length.
-            May as well convert it to a num now.*/
-            num = Integer.parseInt(numStr);
 
             /*If we can we'll break it now. Otherwise, we'll repopulate the array
             with the old values. To avoid going beyond the scope of the string
             we'll set the length to it's new value. Anything beyond this point
-            will be ignored later on too.*/
+            will be ignored later on too. We'll also convert the string object
+            to an int here, but only if necessary.*/
             if(numStr.length() == 1) {
                 break;
             } else {
+                num = Integer.parseInt(numStr);
                 len = numStr.length();
                 for(int i = 0; i < len; ++i) {
                     arr[i] = numStr.charAt(i);
