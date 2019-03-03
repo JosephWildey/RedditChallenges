@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class AdditivePersistence {
 
     public static void main(String[] args) {
-        /*Gotta set ourselves up for success.*/
+        /*Gotta set ourselves up for success. The counter must be initialized up here
+        otherwise each iteration it'll revert back to 0 due to scope.*/
         String number;
-        int len = 0;
+        int len = 0, counter = 1;
         Scanner strInput = new Scanner(System.in);
 
         /*Gotta get our number. */
@@ -27,7 +28,7 @@ public class AdditivePersistence {
 
         /*Might need more than one iteration. */
         while(len > 1) {
-            int num = 0, counter = 1;
+            int num = 0;
             char num2;
 
             /*Loop  through the array we've created and add values
