@@ -1,3 +1,5 @@
+/*I cheated and used strings. Just a head's up.*/
+
 import java.util.Scanner;
 
 public class AdditivePersistence {
