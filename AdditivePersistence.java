@@ -27,7 +27,7 @@ public class AdditivePersistence {
 
         /*Might need more than one iteration. */
         while(len > 1) {
-            int num = 0;
+            int num = 0, counter = 1;
             char num2;
 
             /*Loop  through the array we've created and add values
@@ -48,8 +48,10 @@ public class AdditivePersistence {
             with the old values. To avoid going beyond the scope of the string
             we'll set the length to it's new value. Anything beyond this point
             will be ignored later on too. We'll also convert the string object
-            to an int here, but only if necessary.*/
+            to an int here, but only if necessary. We'll also keep track of the 
+            additive persistence value here.*/
             if(numStr.length() == 1) {
+                System.out.println("The additive persistence is: " + counter);
                 break;
             } else {
                 num = Integer.parseInt(numStr);
@@ -57,6 +59,7 @@ public class AdditivePersistence {
                 for(int i = 0; i < len; ++i) {
                     arr[i] = numStr.charAt(i);
                 }
+                ++counter;
             }
         }
     }
