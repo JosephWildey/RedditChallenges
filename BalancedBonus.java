@@ -18,9 +18,9 @@ public class BalancedBonus {
         int[] numArr = new int[26];
         char[] letArr = new char[26];
 
-        /*Fun part: loop through the string and count the x's or y's.
-        Since this is the basic challenge where a letter is x or y,
-        we can just assume any non-x character is y.*/
+        /*Fun part: loop through the string and count the each character.
+        Then increment the index dedicated to the count of that character.
+        Inefficient, but easy.*/
         for(int i = 0; i < usrString.length(); ++i) {
             switch(usrString.charAt(i)) {
             case 'a':
@@ -104,12 +104,15 @@ public class BalancedBonus {
             }
         }
 
+        /*Using a bool makes the output prettier. */
         for(int i = 0 ; i < 25; ++i)
             if(numArr[i] != numArr[i+1] && numArr[i] > 0 && numArr[i+1] > 0) {
                 balanced = false;
                 break;
             }
 
+        /*Using a bool also makes this part easier when you're dealing with more than
+        two character possibilities. Also much cleaner and easier to read.*/
         if(balanced == false) {
             System.out.println("false.");
         } else {
