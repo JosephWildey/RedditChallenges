@@ -1,5 +1,4 @@
-/*I'm gonna work on a bonus version here in a few. Easy challenge.*/
-
+/*Not pretty but it works. */
 import java.util.Scanner;
 
 public class BalancedBonus {
