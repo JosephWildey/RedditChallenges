@@ -6,7 +6,7 @@ public class AdditivePersistence {
 
     public static void main(String[] args) {
         /*Gotta set ourselves up for success. The counter must be initialized up here
-        otherwise each iteration it'll revert back to 0 due to scope.*/
+        otherwise each iteration it'll revert back to its initial value due to scope.*/
         String number;
         int len = 0, counter = 1;
         Scanner strInput = new Scanner(System.in);
