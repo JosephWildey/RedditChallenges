@@ -1,11 +1,15 @@
-/* Finalized version will be prettier. I intend to create a proper check digit generator function,
-and a proper check UPC function. */
 import java.util.Random;
 import java.util.Scanner;
 
 public class UPCGenAndChk {
 
+    /*Technically you want as little code as possible here for
+    best performance.*/
     public static void main(String[] args) {
+        GenUPC();
+    }
+
+    public static void GenUPC() {
         int num = 0, evenSum = 0, oddSum = 0, M = 0;
         Random rand = new Random(System.currentTimeMillis());
 
@@ -17,14 +21,6 @@ public class UPCGenAndChk {
             arr[i] = num;
         }
 
-        /*Display the arr*/
-        for(int i = 0; i < 11; ++i)
-            System.out.print(arr[i]);
-
-        System.out.println();
-
-        /* Adding 1 to i each iteration allows me to perform a check determining
-        the odd-even nature of the index without creating an empty index.*/
         for(int i = 0; i < 11; ++i) {
             if((i+1) % 2 == 0)
                 evenSum += arr[i];
@@ -32,34 +28,26 @@ public class UPCGenAndChk {
                 oddSum += arr[i];
         }
 
-        System.out.println("Oddsum is: " + oddSum);
-
         /*Once the loop is complete we multiply the sum of odd indexes by 3.*/
         oddSum *= 3;
-
-        System.out.println("oddSum now is: " + oddSum);
 
         /*Then we add the sum of even indexes.*/
         oddSum += evenSum;
 
-        System.out.println("oddSum + evenSum is: " + oddSum);
-
         /*We need M to equal modulo 10 of the last operation.*/
-
         M = oddSum % 10;
 
+        /*The value of the check digit bit depends on the value of M.
+        If M is zero, then that digit is 0. If M is not 0, it is 10 - M. */
         if(M != 0)
             arr[11] = 10 - M;
         else
             arr[11] = M;
 
         /*Display the UPC.*/
+        System.out.print("The UPC is: ");
         for(int i = 0; i < 12; ++i) {
             System.out.print(arr[i]);
         }
-        System.out.println();
-        System.out.println("Oddsum is: " + oddSum);
-        System.out.println("Oddsum mod ten is: " + oddSum % 10);
-        System.out.print("The check digit is: " + arr[11]);
     }
 }
