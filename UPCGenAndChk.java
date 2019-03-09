@@ -23,6 +23,8 @@ public class UPCGenAndChk {
 
         System.out.println();
 
+        /* Adding 1 to i each iteration allows me to perform a check determining
+        the odd-even nature of the index without creating an empty index.*/
         for(int i = 0; i < 11; ++i) {
             if((i+1) % 2 == 0)
                 evenSum += arr[i];
