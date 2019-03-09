@@ -1,3 +1,5 @@
+/* Finalized version will be prettier. I intend to create a proper check digit generator function,
+and a proper check UPC function. */
 import java.util.Random;
 import java.util.Scanner;
 
