@@ -6,7 +6,7 @@ public class UPCGenAndChk {
     /*Technically you want as little code as possible here for
     best performance.*/
     public static void main(String[] args) {
-        GenUPC();
+        menu();
     }
 
     public static void GenUPC() {
@@ -52,7 +52,7 @@ public class UPCGenAndChk {
                 System.out.print(arr[i]);
             }
         } else {
-            System.out.print("Sorry, an invalid was generated!");
+            System.out.print("Sorry, an invalid UPC was generated!");
         }
     }
 
@@ -89,6 +89,35 @@ public class UPCGenAndChk {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /* Generates output based on user input while minimizing code present
+    in the main function. Making the program prettier.*/
+    public static void menu() {
+        /* Setting ourselves up for success */
+        Scanner usrInput = new Scanner(System.in);
+        int usrChoice = 0;
+        int[] arr = new int[12];
+        String usrUPC = "";
+
+        /* Get the user's choice */
+        System.out.print("Enter 1 to generate a UPC or 2 to check your 12-digit UPC: ");
+        usrChoice = usrInput.nextInt();
+        usrInput.close();
+
+        /* Exact equivalence works here. */
+        switch(usrChoice) {
+        case 1:
+            GenUPC();
+            break;
+        case 2:
+            /* Does not work yet. Need to take in UPC from user
+            and make it checkable for this function. */
+            checkUPC(arr);
+            break;
+        default:
+            System.out.print("Sorry, please run the program again.");
         }
     }
 }
