@@ -114,11 +114,11 @@ public class UPCGenAndChk {
         case 2:
             System.out.print("Please input your UPC: ");
             usrUPC = UPCInput.nextLine();
-
             ChkUsrUPC(usrUPC);
             break;
         default:
             System.out.print("Sorry, please run the program again.");
+            break;
         }
     }
 
