@@ -97,14 +97,14 @@ public class UPCGenAndChk {
     public static void menu() {
         /* Setting ourselves up for success */
         Scanner usrInput = new Scanner(System.in);
+        Scanner UPCInput = new Scanner(System.in);
         int usrChoice = 0;
         int[] arr = new int[12];
-        String usrUPC = "";
+        String usrUPC;
 
         /* Get the user's choice */
         System.out.print("Enter 1 to generate a UPC or 2 to check your 12-digit UPC: ");
         usrChoice = usrInput.nextInt();
-        usrInput.close();
 
         /* Exact equivalence works here. */
         switch(usrChoice) {
@@ -112,12 +112,27 @@ public class UPCGenAndChk {
             GenUPC();
             break;
         case 2:
-            /* Does not work yet. Need to take in UPC from user
-            and make it checkable for this function. */
-            checkUPC(arr);
+            System.out.print("Please input your UPC: ");
+            usrUPC = UPCInput.nextLine();
+
+            ChkUsrUPC(usrUPC);
             break;
         default:
             System.out.print("Sorry, please run the program again.");
+        }
+    }
+
+    public static void ChkUsrUPC(String UPC) {
+        int[] upcNums = new int[12];
+
+        for(int i = 0; i < 12; ++i) {
+            upcNums[i] = Character.getNumericValue(UPC.charAt(i));
+        }
+
+        if(checkUPC(upcNums) == true) {
+            System.out.print("The UPC is valid.");
+        } else {
+            System.out.print("Invalid UPC.");
         }
     }
 }
