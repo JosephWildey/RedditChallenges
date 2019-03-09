@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 public class UPCGenAndChk {
 
-    /*Technically you want as little code as possible here for
-    best performance.*/
     public static void main(String[] args) {
         int num = 0, evenSum = 0, oddSum = 0, M = 0;
         Random rand = new Random(System.currentTimeMillis());
