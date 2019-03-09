@@ -122,10 +122,13 @@ public class UPCGenAndChk {
         }
     }
 
+    /* This will check a UPC that a user inputs. Basically just asks for the UPC,
+    stores it as a string, then converts it to an array of ints. Super ugly tho. */
     public static void ChkUsrUPC(String UPC) {
         int[] upcNums = new int[12];
 
         for(int i = 0; i < 12; ++i) {
+            //Ugly beast.
             upcNums[i] = Character.getNumericValue(UPC.charAt(i));
         }
 
