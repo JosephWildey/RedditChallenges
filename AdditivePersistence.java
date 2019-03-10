@@ -23,32 +23,41 @@ public class AdditivePersistence {
         for(int i = 0; i < len; ++i)
             arr[i] = number.charAt(i);
 
-        System.out.println(addDigits(arr));
-    }
+        /*Might need more than one iteration. */
+        while(len > 1) {
+            int num = 0;
+            char num2;
 
-    public static int addDigits(char[] arr) {
-        int num = 0, counter = 0, len = arr.length;
-        char num2;
-        for(int i = 0; i < len; ++i) {
+             /*Loop through the array we've created and add values
+             as we go through it.*/
+            for(int i = 0; i < len; ++i) {
                 num2 = arr[i];
                 num += Character.getNumericValue(num2);
             }
-            ++counter;
-            System.out.println(num);
-        if(len > 1) {
-            addDigits(arr, counter);
-            ++counter;
+
+ /*This makes it easier to determine the length of the value.*/
+            String numStr = Integer.toString(num);
+
+             /*Output the value each iteration.*/
+            System.out.println(numStr);
+
+            /*If we can we'll break it now. Otherwise, we'll repopulate the array
+            with the old values. To avoid going beyond the scope of the string
+            we'll set the length to it's new value. Anything beyond this point
+            will be ignored later on too. We'll also convert the string object
+            to an int here, but only if necessary. We'll also keep track of the
+            additive persistence value here.*/
+            if(numStr.length() == 1) {
+                System.out.println("The additive persistence is: " + counter);
+                break;
+            } else {
+                num = Integer.parseInt(numStr);
+                len = numStr.length();
+                ++counter;
+                for(int i = 0; i < len; ++i) {
+                    arr[i] = numStr.charAt(i);
+                }
+            }
         }
-        return counter;
-    }
-
-    public static void addDigits(char[] arr, int counter) {
-        int num = 0, len = arr.length;
-        char num2;
-        for(int i = 0; i < len; ++i) {
-                num2 = arr[i];
-                num += Character.getNumericValue(num2);
-            }
-        ++counter;
     }
 }
