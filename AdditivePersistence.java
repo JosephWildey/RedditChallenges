@@ -17,14 +17,7 @@ public class AdditivePersistence {
         number = strInput.nextLine();
         strInput.close();
 
-        /*Only to make things prettier. */
-        len = number.length();
-
-        /*Gonna set up our array here for convenience and stuff. */
-        char[] nums = new char[len];
-
-        buildArray(number,nums);
-        System.out.println(sumsCount(nums));
+        System.out.println(sumsCount(number));
     }
 
     /*We'll run this more than once, so it makes sense
@@ -44,11 +37,13 @@ public class AdditivePersistence {
     a different array than the one initially passed
     as an argument along the way. Lastly, it then returns
     the additive persistence of a number.*/
-    public static int sumsCount(char[] arr) {
+    public static int sumsCount(String sen) {
         char num2;
-        int len = arr.length, num = 0;
+        int len = sen.length(), num = 0;
+        char[] newNums = new char[len];
+        buildArray(sen,newNums);
         for(int i = 0; i < len; ++i) {
-            num2 = arr[i];
+            num2 = newNums[i];
             num += Character.getNumericValue(num2);
         }
 
@@ -56,11 +51,8 @@ public class AdditivePersistence {
 
         len = numStr.length();
 
-        char[] newNums = new char[len];
-
         if(len > 1) {
-            buildArray(numStr,newNums);
-            sumsCount(newNums);
+            sumsCount(numStr);
             ++counter;
         }
 
