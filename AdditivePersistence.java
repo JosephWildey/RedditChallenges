@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class AdditivePersistence {
+    /* Keeps track of a number's additive persistence.
+    Needed out here because otherwise it's always 1+n, where
+    n is the initial value.*/
+    private static int counter = 1;
 
     public static void main(String[] args) {
         /*Gotta set ourselves up for success.*/
@@ -16,48 +20,50 @@ public class AdditivePersistence {
         /*Only to make things prettier. */
         len = number.length();
 
+        /*Gonna set up our array here for convenience and stuff. */
+        char[] nums = new char[len];
+
+        buildArray(number,nums);
+        System.out.println(sumsCount(nums));
+    }
+
+    /*We'll run this more than once, so it makes sense
+    to make it a function. */
+    public static void buildArray(String sen, char[] arr) {
+        int len = sen.length();
         /*Gotta init our array. */
-        char[] arr = new char[len];
 
         /*Gotta flesh out the array with values. */
         for(int i = 0; i < len; ++i)
-            arr[i] = number.charAt(i);
+            arr[i] = sen.charAt(i);
+    }
 
-        /*Might need more than one iteration. */
-        while(len > 1) {
-            int num = 0;
-            char num2;
-
-             /*Loop through the array we've created and add values
-             as we go through it.*/
-            for(int i = 0; i < len; ++i) {
-                num2 = arr[i];
-                num += Character.getNumericValue(num2);
-            }
-
- /*This makes it easier to determine the length of the value.*/
-            String numStr = Integer.toString(num);
-
-             /*Output the value each iteration.*/
-            System.out.println(numStr);
-
-            /*If we can we'll break it now. Otherwise, we'll repopulate the array
-            with the old values. To avoid going beyond the scope of the string
-            we'll set the length to it's new value. Anything beyond this point
-            will be ignored later on too. We'll also convert the string object
-            to an int here, but only if necessary. We'll also keep track of the
-            additive persistence value here.*/
-            if(numStr.length() == 1) {
-                System.out.println("The additive persistence is: " + counter);
-                break;
-            } else {
-                num = Integer.parseInt(numStr);
-                len = numStr.length();
-                ++counter;
-                for(int i = 0; i < len; ++i) {
-                    arr[i] = numStr.charAt(i);
-                }
-            }
+    /*This does all the dirty work for us. It does
+    the adding of digits, determines if it must be
+    run again, and if so does so recursively, building
+    a different array than the one initially passed
+    as an argument along the way. Lastly, it then returns
+    the additive persistence of a number.*/
+    public static int sumsCount(char[] arr) {
+        char num2;
+        int len = arr.length, num = 0;
+        for(int i = 0; i < len; ++i) {
+            num2 = arr[i];
+            num += Character.getNumericValue(num2);
         }
+
+        String numStr = Integer.toString(num);
+
+        len = numStr.length();
+
+        char[] newNums = new char[len];
+
+        if(len > 1) {
+            buildArray(numStr,newNums);
+            sumsCount(newNums);
+            ++counter;
+        }
+
+        return counter;
     }
 }
