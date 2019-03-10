@@ -52,7 +52,8 @@ public class UPCGenAndChk {
                 System.out.print(arr[i]);
             }
         } else {
-            System.out.print("Sorry, an invalid UPC was generated!");
+            //Recursion in the case of failure. User won't know if the program ever failed.
+            GenUPC();
         }
     }
 
