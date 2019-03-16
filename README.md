@@ -17,4 +17,4 @@ The addititive persistence of a value is the amount of times you can add all the
 This program just checked to make sure that characters in a given string appear in the string an equal amount of times. First it started with x and y and the bonus includes all lowercase characters in the English alphabet.
 
 # RGBToHex
-This program takes the integer values of RGB (0-255 for Red, Green, and Blue) and outputs the hexidecimal string. Eventually, it will average the values you input for each color and output the resulting string. With no hard limit on inputs.
+This program takes the integer values of RGB (0-255 for Red, Green, and Blue) and outputs the hexidecimal string. Eventually, it will average the values you input for each color and output the resulting string. With no hard limit on number of inputs. I intend to avoid Java libraries for the resizing arrays and implement one I learned in a Comp. Sci. class once.
