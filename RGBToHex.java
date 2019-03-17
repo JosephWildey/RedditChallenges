@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
 public class RGBToHex {
+    /* Setting ourselves up for success. Sometimes just easier
+    to set things up here outside of a function's scope and call
+    it within the function than to define it in the function itself. */
     public static int redCount = 0, greenCount = 0, blueCount = 0;
 
+    /* You want as little code here as possible. Sometimes,
+    just a loop running the function even. */
     public static void main(String[] args) {
+        RGBToHex();
+        }
+
+        /* Reduces code in main which improves performance,
+        also makes code a bit more readable. this is the main
+        function that makes everything work. */
+        public static void RGBToHex() {
         Scanner redVal = new Scanner(System.in);
         Scanner greenVal = new Scanner(System.in);
         Scanner blueVal = new Scanner(System.in);
