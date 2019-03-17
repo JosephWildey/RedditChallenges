@@ -54,9 +54,16 @@ public class RGBToHex {
             ++blueCount;
         } while(blueCount < blueSize);
 
-        intRedVal = averageArray(redVals,redSize);
-        intGreenVal = averageArray(greenVals,greenSize);
-        intBlueVal = averageArray(blueVals,blueSize);
+        /* Prevents possibly unnecessary math. */
+        if(redSize > 1) {
+            intRedVal = averageArray(redVals,redSize);
+        }
+        if(greenSize > 1) {
+            intGreenVal = averageArray(greenVals,greenSize);
+        }
+        if(blueSize > 1) {
+            intBlueVal = averageArray(blueVals,blueSize);
+        }
 
         System.out.print('#');
         System.out.print(firstHexDigit(intRedVal));
