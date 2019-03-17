@@ -14,7 +14,8 @@ public class RGBToHex {
 
         /* Reduces code in main which improves performance,
         also makes code a bit more readable. this is the main
-        function that makes everything work. */
+        function that makes everything work. Also the class
+        constructor.*/
         public static void RGBToHex() {
         Scanner redVal = new Scanner(System.in);
         Scanner greenVal = new Scanner(System.in);
