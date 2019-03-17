@@ -17,6 +17,10 @@ public class RGBToHex {
 
         int[] redVals = new int[redSize];
 
+        /* do...while loops execute at least once. This means
+        I can collect the user data while the loop is executing and
+        continue executing the loop until I have collected all of the
+        user's data. */
         do {
             System.out.print("Please insert the red value(0-255): ");
             intRedVal = redVal.nextInt();
@@ -65,6 +69,8 @@ public class RGBToHex {
         }
 
 
+    /* A quick function for arithmetic averaging. Return type
+    is consistent with the type of number used to perform the math. */
     public static int averageArray(int[] arr, int count) {
         int avgVal = 0;
         for(int i = 0; i < count; ++i) {
