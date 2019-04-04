@@ -118,7 +118,8 @@ public class UPCGenAndChk {
             ChkUsrUPC(usrUPC);
             break;
         default:
-            System.out.print("Sorry, please run the program again.");
+            System.out.println("Sorry, please try again.");
+            menu();
             break;
         }
     }
