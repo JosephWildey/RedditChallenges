@@ -45,7 +45,7 @@ public class UPCGenAndChk {
             arr[11] = M;
 
         /* If something messes up it won't show a possibly incorrect
-        UPC. Rather, it'll just tell the user. */
+        UPC. */
         if(checkUPC(arr) == true) {
             System.out.print("The UPC is: ");
             for(int i = 0; i < 12; ++i) {
