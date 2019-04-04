@@ -99,13 +99,15 @@ public class UPCGenAndChk {
         /* Setting ourselves up for success */
         Scanner usrInput = new Scanner(System.in);
         Scanner UPCInput = new Scanner(System.in);
-        int usrChoice = 0;
+        /* The use of a string prohibits inputs like "Pizza" without throwing an exception
+        that I cannot seem to catch with a try-catch statement. */
+        String usrChoice = "0";
         int[] arr = new int[12];
         String usrUPC;
 
         /* Get the user's choice */
         System.out.print("Enter 1 to generate a UPC or 2 to check your 12-digit UPC: ");
-        usrChoice = usrInput.nextInt();
+        usrChoice = usrInput.nextLine();
 
         /* Exact equivalence works here. */
         switch(usrChoice) {
