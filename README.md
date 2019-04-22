@@ -19,3 +19,6 @@ This program just checked to make sure that characters in a given string appear 
 # RGBToHex
 This program takes the integer values of RGB (0-255 for Red, Green, and Blue) and outputs the hexidecimal string. It will average the values given for a specific color, if you give more than one value. Otherwise, it will just process the initial value given. I wanted to make the program a bit more flexible, but it would have been ugly and unnecessarily taxing. 
 An update for this at some point to combine hex strings is coming, someday. Misread the "bonus" part of the challenge it seems.
+
+# CratePacker
+Determines the amount of crates you could stuff into a larger crate given the dimensions of both the smaller crates and the large crate. 
