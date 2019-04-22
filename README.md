@@ -21,4 +21,4 @@ This program takes the integer values of RGB (0-255 for Red, Green, and Blue) an
 An update for this at some point to combine hex strings is coming, someday. Misread the "bonus" part of the challenge it seems.
 
 # CratePacker
-Determines the amount of crates you could stuff into a larger crate given the dimensions of both the smaller crates and the large crate. 
+Determines the amount of crates you could stuff into a larger crate given the dimensions of both the smaller crates and the large crate. Only works in two dimensions at the moment. 
