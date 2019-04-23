@@ -22,3 +22,6 @@ An update for this at some point to combine hex strings is coming, someday. Misr
 
 # CratePacker
 Determines the amount of crates you could stuff into a larger crate given the dimensions of both the smaller crates and the large crate. Only works in two dimensions at the moment. 
+
+# NumsProcessor
+ Adds 1 to each digit in an integer. Uses Java's implementation of Stack because I was too lazy to write my own linked list. 
