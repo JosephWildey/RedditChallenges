@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+/** 
+* @Author Joe Wildey
+* @Version 6/7/2019
+* Computes the additive persistence of a number, which is the number of times its terms can be added before it reaches a single digit.
+*/
+
 public class AdditivePersistence {
     /** This is the number the user will enter when prompted. */
     private static int userNum;
@@ -25,7 +31,10 @@ public class AdditivePersistence {
     }
 
     /** Does the heavy lifting by adding individual terms of a given number
-    and doing so until it is a single term number (0-9). */
+    and doing so until it is a single term number (0-9). 
+    * @return none
+    * @param int num - the number whose additive persistence we want to compute.
+    */
     public static void AddPersistence(int num) {
         while(num > 0) {
             sums += num % 10;
@@ -41,7 +50,10 @@ public class AdditivePersistence {
         }
     }
 
-    /** Gets the private int Counter for output. */
+    /** Gets the private int Counter for output. 
+    * @return counter - an int that keeps track of how many times we added individual digits of the number.
+    * @param none
+    */
     public static int getCounter() {
         return counter;
     }
