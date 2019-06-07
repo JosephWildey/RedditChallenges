@@ -45,7 +45,7 @@ public class AdditivePersistence {
         sums = 0;
 
         if(num > 10) {
-            AddPersistence(sums);
+            AddPersistence(num);
             ++counter;
         }
     }
