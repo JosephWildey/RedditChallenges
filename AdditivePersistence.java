@@ -1,61 +1,48 @@
 import java.util.Scanner;
 
 public class AdditivePersistence {
-    /* Keeps track of a number's additive persistence.
-    Needed out here because otherwise it's always 1+n, where
-    n is the initial value.*/
+    /** This is the number the user will enter when prompted. */
+    private static int userNum;
+
+    /** This is the number that will be used to sum the individual terms of the user's number. */
+    private static int sums;
+
+    /** This counter will keep track of how many times we added terms to get to a single term number. */
     private static int counter = 1;
-
+    
+    
+    /** Main method required for execution. */
     public static void main(String[] args) {
-        /*Gotta set ourselves up for success.*/
-        String number;
-        int len = 0, counter = 1;
-        Scanner strInput = new Scanner(System.in);
+        Scanner scnr = new Scanner(System.in);
 
-        /*Gotta get our number. */
-        System.out.print("Please input a number: ");
-        number = strInput.nextLine();
-        strInput.close();
+        System.out.print("Please enter your number: ");
+        userNum = scnr.nextInt();
 
-        System.out.println(sumsCount(number));
+        AddPersistence(userNum);
+
+        System.out.println(getCounter());
+
     }
 
-    /*We'll run this more than once, so it makes sense
-    to make it a function. */
-    public static void buildArray(String sen, char[] arr) {
-        int len = sen.length();
-        /*Gotta init our array. */
-
-        /*Gotta flesh out the array with values. */
-        for(int i = 0; i < len; ++i)
-            arr[i] = sen.charAt(i);
-    }
-
-    /*This does all the dirty work for us. It does
-    the adding of digits, determines if it must be
-    run again, and if so does so recursively, building
-    a different array than the one initially passed
-    as an argument along the way. Lastly, it then returns
-    the additive persistence of a number.*/
-    public static int sumsCount(String sen) {
-        char num2;
-        int len = sen.length(), num = 0;
-        char[] newNums = new char[len];
-        buildArray(sen,newNums);
-        for(int i = 0; i < len; ++i) {
-            num2 = newNums[i];
-            num += Character.getNumericValue(num2);
+    /** Does the heavy lifting by adding individual terms of a given number
+    and doing so until it is a single term number (0-9). */
+    public static void AddPersistence(int num) {
+        while(num > 0) {
+            sums += num % 10;
+            num = num / 10;
         }
 
-        String numStr = Integer.toString(num);
+        num = sums;
+        sums = 0;
 
-        len = numStr.length();
-
-        if(len > 1) {
-            sumsCount(numStr);
+        if(num > 10) {
+            AddPersistence(sums);
             ++counter;
         }
+    }
 
+    /** Gets the private int Counter for output. */
+    public static int getCounter() {
         return counter;
     }
 }
