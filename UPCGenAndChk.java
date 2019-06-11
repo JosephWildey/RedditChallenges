@@ -25,7 +25,10 @@ public class UPCGenAndChk {
         Scanner userInput = new Scanner(System.in);
 
         System.out.print("Enter 1 to generate a UPC or 2 to check a UPC: ");
-        choice = userInput.nextInt();
+        if(userInput.hasNextInt())
+            choice = userInput.nextInt();
+        else
+            userInput.next();
 
         switch(choice) {
         case 1:
@@ -38,7 +41,7 @@ public class UPCGenAndChk {
             CheckUPC(userUPC);
             break;
         default:
-            System.out.print("Sorry, please try again.");
+            System.out.print("Sorry, please try again: ");
             Menu();
         }
     }
@@ -116,11 +119,6 @@ public class UPCGenAndChk {
             return userUPC;
     }
 
-    /**
-    * Returns the UPC Array when a UPC is generated instead of supplied.
-    * @param - none
-    * @return - none
-    */
     public static void DisplayUPCArray() {
         for(int i = 0; i <= 11; ++i)
             System.out.print(UPC_ARRAY[i]);
