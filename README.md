@@ -25,3 +25,6 @@ Determines the amount of crates you could stuff into a larger crate given the di
 
 # NumsProcessor
  Adds 1 to each digit in an integer. Uses Java's implementation of Stack because I was too lazy to write my own linked list. Reads 10 as 1,0 and not 10. Just for reference.
+
+# Yahtzee Upper Scoring
+Analyzes a yahtzee roll and retrieves the highest value possible based on the count of occurrences of each individual value in the roll. 
