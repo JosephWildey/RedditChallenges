@@ -28,3 +28,6 @@ Determines the amount of crates you could stuff into a larger crate given the di
 
 # Yahtzee Upper Scoring
 Analyzes a yahtzee roll and retrieves the highest value possible based on the count of occurrences of each individual value in the roll. 
+
+# Taxation
+This is a simple marginal rate taxation calculator. Income brackets/caps and taxation rates are stored in a CSV file for easy editing.
