@@ -31,7 +31,7 @@ with open("C:\\Users\\JoeWi\\OneDrive\\Documents\\taxbrackets.csv", 'r') as csvf
         data = line.split(',')
 
         # the first value is the tax bracket, so store that in its own list for future reference and simplicity
-        brackets.append(int(data[0]))
+        brackets.append(int(data[0]) * 1000)
 
         # strip the end of each line of the newline so conversion from string to float is possible
         data[1].rstrip()
