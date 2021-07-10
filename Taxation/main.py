@@ -10,6 +10,7 @@ print("Your annual income is ${:,} before taxes.".format(user_income))
 # the first bracket has 0 taxes and is set at 10,000, therefore we do not pay taxes on the first $10,000.
 if user_income > 10000:
 
+    # the second bracket is 10% on anything up to $30,000
     if user_income <= 30000:
         
         # subtract 10k from user income before calculating taxes to avoid taxing the first $10k of their income
@@ -18,6 +19,7 @@ if user_income > 10000:
 
         print("You paid ${:,} in taxes and your income is now ${:,}.".format(tax_paid, user_income))
 
+    # the third bracket is 25% on anything above 30% and up to $100k, but I'm ignoring the ceiling for simplicity's sake.
     elif user_income > 30000:
 
         # redundant portion, but necessary for now 
