@@ -56,7 +56,10 @@ if user_income >= brackets[0]:
 
     index = 1
 
-    while user_income <= brackets[2] and index < len(brackets):
+    # cleaner and more open way of finding the highest value.
+    end = len(brackets) - 1
+
+    while user_income <= brackets[end] and index < len(brackets):
 
         taxed_income += brackets[index - 1]
 
