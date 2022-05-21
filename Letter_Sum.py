@@ -19,8 +19,11 @@ def letter_Count(word):
             letterSum += ord(letter.lower()) - 96
 
 # output sum of letter values if an exception has not been raised
-    print(letterSum)
+    print(word + " has a score of: " + str(letterSum))
 
 if __name__ == '__main__':
 
-    letter_Count('microspectrophotometries')
+# grab user input
+    user_word = input("Enter a word: ")
+# process user input
+    letter_Count(user_word)
