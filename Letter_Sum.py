@@ -14,6 +14,7 @@ def letter_Count(word):
         if ord(letter.lower()) < 97 or ord(letter.lower()) > 122:
             raise Exception("Invalid character detected.")
         # if every character is a letter add up the values to be returned to the user
+        # since letter 'a' is 97 in ascii, I subtract 96 to get a value between 1 and 26 for each letter
         else:
             letterSum += ord(letter.lower()) - 96
 
