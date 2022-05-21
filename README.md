@@ -31,3 +31,6 @@ Analyzes a yahtzee roll and retrieves the highest value possible based on the co
 
 # Taxation
 This is a simple marginal rate taxation calculator. Income brackets/caps and taxation rates are stored in a CSV file for easy editing. The calculator does not currently handle values beyond the highest ceiling, which at the moment is $100,000 because it loops through all the brackets and rates in the csv file. 
+
+# Letter Sum
+This is a simple little script that iterates through a given word, converts the letter to lowercase to make it easier on me, and then adds a value between 1 and 26 to some variable. I do the math by subtracting 96 from the ascii value of the character, because the ascii value of the lowercase a is 97. Doing it this way makes it super easy for me to validate user input, because the ascii will always be between 97 and 122. If it isn't I raise an exception and stop the script. Probably not the prettiest way to validate user input, but it was a simple script. It works. 
