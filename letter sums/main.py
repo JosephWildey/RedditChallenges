@@ -2,7 +2,7 @@ from letter_sum_methods import letter_Count
 from letter_sum_methods import find_highest_score
 from letter_sum_methods import find_odd_sums
 
-file = open("C:\\Users\\JoeWi\\OneDrive\\Documents\\enable1.txt", "r")
+file = open("..\\enable1.txt", "r")
 
 file_words = file.read().splitlines()
 
