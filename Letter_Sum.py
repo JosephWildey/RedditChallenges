@@ -1,27 +1,18 @@
+from letter_sum_methods import letter_Count
+from letter_sum_methods import find_highest_score
+from letter_sum_methods import find_odd_sums
 
-# Simple method that provides a value between 1 and 26 for each letter in the alphabet and sums the value.
-def letter_Count(word):
+file = open("C:\\Users\\JoeWi\\OneDrive\\Documents\\enable1.txt", "r")
 
-# intiate the sum variable
+file_words = file.read().splitlines()
 
-    letterSum = 0
-
-# Loop through the provided word in the argument, if a non-alpha character is caught raise an exception.
-# Otherwise return the sum of the letters.
-    for letter in word:
-
-        # simple check to make sure the ascii value of each character is within the range of lowercase letters
-        if ord(letter.lower()) < 97 or ord(letter.lower()) > 122:
-            raise Exception("Invalid character detected.")
-        # if every character is a letter add up the values to be returned to the user
-        # since letter 'a' is 97 in ascii, I subtract 96 to get a value between 1 and 26 for each letter
-        else:
-            letterSum += ord(letter.lower()) - 96
-
-# output sum of letter values if an exception has not been raised
-    print(word + " has a score of: " + str(letterSum))
+file.close()
 
 if __name__ == '__main__':
+
+#    find_highest_score(file_words)
+
+#    find_odd_sums(file_words)
 
 # grab user input
     user_word = input("Enter a word: ")
