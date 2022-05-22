@@ -51,3 +51,25 @@ def letter_Count(word):
 
 # output sum of letter values if an exception has not been raised
     print(word + " has a score of: " + str(letterSum))
+    
+def find_words_mode(word_list):
+
+    letterSum = 0
+
+    word_math_mode = {}
+
+    for word in word_list:
+        for letter in word:
+            letterSum += ord(letter.lower()) - 96
+
+        try:
+            word_math_mode[letterSum] += 1
+        except KeyError:
+            word_math_mode[letterSum] = 1
+
+        letterSum = 0
+
+    for word in word_math_mode:
+        if word_math_mode.get(word) > 1921:
+            print("The most common leter sum in the list is: " + str(word) +
+                  " and " + str(word_math_mode[word]) + " words have that sum")
