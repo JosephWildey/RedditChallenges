@@ -56,15 +56,25 @@ def find_words_mode(word_list):
 
     letterSum = 0
 
-    word_math_mode = {}
+    word_math_mode = defaultdict(int)
 
-    for word in word_list:
+    midpoint = len(word_list) // 2
+
+    left_side = word_list[:midpoint]
+
+    right_side = word_list[midpoint:]
+
+    for word in left_side:
         letterSum = compute_score(word)
 
-        try:
-            word_math_mode[letterSum] += 1
-        except KeyError:
-            word_math_mode[letterSum] = 1
+        word_math_mode[letterSum] += 1
+
+        letterSum = 0
+
+    for word in right_side:
+        letterSum = compute_score(word)
+
+        word_math_mode[letterSum] += 1
 
         letterSum = 0
 
