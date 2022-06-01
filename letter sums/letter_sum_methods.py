@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def find_highest_score(word_list):
 
     letterSum = 0
