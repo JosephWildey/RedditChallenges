@@ -24,9 +24,7 @@ def find_odd_sums(word_list):
     for word in word_list:
         letterSum = compute_score(word)
 
-        if letterSum % 2 == 0:
-            continue
-        else:
+        if letterSum % 2 == 1:
             odd_counts[word] = letterSum
 
         letterSum = 0
