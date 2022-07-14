@@ -1,7 +1,7 @@
 from __future__ import annotations
 from statistics import mode
 
-def compute_score(word: str) -> str:
+def compute_score(word: str) -> int:
     word_score = sum([ord(letter.lower()) - 96 for letter in word])
 
     return word_score
