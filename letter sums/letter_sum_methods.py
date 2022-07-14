@@ -2,18 +2,11 @@ from collections import defaultdict
 
 def find_highest_score(word_list):
 
-    letterSum = 0
-
-    for word in word_list:
-        letterSum = compute_score(word)
-
-        if letterSum > bestScore:
-            bestScore = letterSum
-            bestWord = word
-
-        letterSum = 0
-
-    print(bestWord + " " + str(bestScore))
+    word_scores = []
+    
+    word_scores = [compute_score(word) for word in words]
+    
+    return max(word_scores)
 
 def find_odd_sums(word_list):
 
