@@ -97,9 +97,8 @@ def find_words_mode(word_list):
 
 def compute_score(word):
 
-    Sum = 0
+    word_score = 0
 
-    for letter in word:
-        Sum += ord(letter.lower()) - 96
+    word_score = sum([ord(letter.lower()) - 96 for letter in word])
 
-    return Sum
+    return word_score
