@@ -1,6 +1,7 @@
+from __future__ import annotations
 from statistics import mode
 
-def compute_score(word):
+def compute_score(word: str) -> str:
 
     word_score = 0
 
@@ -8,7 +9,7 @@ def compute_score(word):
 
     return word_score
 
-def find_highest_score(word_list):
+def find_highest_score(words: list) -> list:
 
     word_scores = []
     
@@ -16,7 +17,7 @@ def find_highest_score(word_list):
     
     return max(word_scores)
 
-def find_odd_sums(word_list):
+def find_odd_sums(words: list) -> list:
 
     odd_score_words = []
     
@@ -24,7 +25,7 @@ def find_odd_sums(word_list):
     
     return len(odd_score_words)
 
-def find_words_mode(word_list):
+def find_words_mode(words: list) -> list:
     word_scores = []
     
     midpoint = len(words) // 2
