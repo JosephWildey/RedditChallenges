@@ -10,19 +10,11 @@ def find_highest_score(word_list):
 
 def find_odd_sums(word_list):
 
-    letterSum = 0
-
-    odd_counts = {}
-
-    for word in word_list:
-        letterSum = compute_score(word)
-
-        if letterSum % 2 == 1:
-            odd_counts[word] = letterSum
-
-        letterSum = 0
-
-    print("Words with odd scores: " + str(len(odd_counts)))
+    odd_score_words = []
+    
+    odd_score_words = [word for word in words if compute_score(word) % 2 == 1]
+    
+    return len(odd_score_words)
 
 def find_words_mode(word_list):
 
