@@ -27,7 +27,7 @@ def find_odd_sums(words: list) -> int:
 
     odd_word_scores = [word for word in left_side if compute_score(word) % 2 == 1]
 
-    odd_word_scores = [word for word in right_side if compute_score(word) % 2 == 1]
+    odd_word_scores += [word for word in right_side if compute_score(word) % 2 == 1]
 
     return len(odd_word_scores)
 
