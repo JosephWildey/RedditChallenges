@@ -11,11 +11,16 @@ def compute_score(word: str) -> str:
 
 def find_highest_score(words: list) -> list:
 
-    word_scores = []
+    midpoint = len(words) // 2
     
-    word_scores = [compute_score(word) for word in words]
-    
-    return max(word_scores)
+    left_side = [compute_score(word) for word in words[:midpoint]]
+
+    right_side = [compute_score(word) for word in words[midpoint:]]
+
+    if max(left_side) > max(right_side):
+         return max(left_side)
+    else:
+         return max(right_side)
 
 def find_odd_sums(words: list) -> list:
 
