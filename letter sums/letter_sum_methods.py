@@ -1,5 +1,13 @@
 from collections import defaultdict
 
+def compute_score(word):
+
+    word_score = 0
+
+    word_score = sum([ord(letter.lower()) - 96 for letter in word])
+
+    return word_score
+
 def find_highest_score(word_list):
 
     word_scores = []
@@ -58,11 +66,3 @@ def find_words_mode(word_list):
         if word_math_mode.get(word) > 1921:
             print("The most common leter sum in the list is: " + str(word) +
                   " and " + str(word_math_mode[word]) + " words have that sum")
-
-def compute_score(word):
-
-    word_score = 0
-
-    word_score = sum([ord(letter.lower()) - 96 for letter in word])
-
-    return word_score
