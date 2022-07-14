@@ -6,7 +6,7 @@ def compute_score(word: str) -> int:
 
     return word_score
 
-def find_highest_score(words: list) -> list:
+def find_highest_score(words: list) -> int:
     midpoint = len(words) // 2
     
     left_side = [compute_score(word) for word in words[:midpoint]]
@@ -18,7 +18,7 @@ def find_highest_score(words: list) -> list:
     else:
          return max(right_side)
 
-def find_odd_sums(words: list) -> list:
+def find_odd_sums(words: list) -> int:
     midpoint = len(words) // 2
 
     left_side = words[:midpoint]
@@ -31,7 +31,7 @@ def find_odd_sums(words: list) -> list:
 
     return len(odd_word_scores)
 
-def find_words_mode(words: list) -> list:
+def find_words_mode(words: list) -> int:
     midpoint = len(words) // 2
     
     left_side = words[:midpoint]
