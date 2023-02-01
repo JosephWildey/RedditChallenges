@@ -1,5 +1,8 @@
 import csv
 
+# ask user for income
+print("Please enter your income:")
+
 # get user income
 user_income = int(input())
 
