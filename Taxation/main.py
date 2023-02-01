@@ -55,7 +55,7 @@ with open("C:\\Users\\JoeWi\\OneDrive\\Documents\\taxbrackets.csv", 'r') as csvf
         rates.append(float(data[1]))
 
 # no need to do anything if the income is less than the first bracket, assuming the rate is 0.00%. Adjust accordingly.
-if user_income >= brackets[0]:
+if user_income > brackets[0]:
 
     index = 1
 
